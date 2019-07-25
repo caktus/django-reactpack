@@ -1,0 +1,23 @@
+version: '3'
+
+volumes:
+  local_gardentracker_data: {}
+  local_gardentracker_data_backups: {}
+
+services:
+  db:
+    image: postgres:9.6-alpine
+    volumes:
+      - local_gardentracker_data:/var/lib/postgresql/data
+      - local_gardentracker_data_backups:/backups
+    env_file:
+      - ./.envs/.local/.postgres
+    ports:
+      - "54328:5432"
+  db_maint:
+    image: postgres:9.6-alpine
+    env_file:
+      - ./.envs/.local/.db_maint
+    depends_on:
+      - db
+
