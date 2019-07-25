@@ -283,4 +283,5 @@ django_reactpack/media/
 
 .pytest_cache/
 
-
+### Local hides
+jgdc.yml
