@@ -1,0 +1,5 @@
+[run]
+include = django_reactpack/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
