@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/caktus/django-reactpack/issues"
   },
-  "homepage": "https://github.com/caktus/django-reactpack#readme"
+  "homepage": "https://github.com/caktus/django-reactpack#readme",
+  "devDependencies": {
+    "webpack": "^4.37.0",
+    "webpack-bundle-tracker": "^0.4.2-beta",
+    "webpack-cli": "^3.3.6"
+  }
 }
