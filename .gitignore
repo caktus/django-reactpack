@@ -290,3 +290,4 @@ jgdc.yml
 .project
 
 django_reactpack/static/bundles/js/*
+webpack-stats.json

@@ -2,12 +2,6 @@
 
 {% block content %}
 
-    {% comment %} Would be nice to abstract this bit in to another block {% endcomment%}
-    <script>
-        window.gardens = "{{ gardens | safe }}";
-    </script>
-    {% load render_bundle from webpack_loader %}
-    <div id="gardens__react"></div>
-    {% render_bundle 'gardens' %}
+ <h1>Home tho</h1>
 
 {% endblock content%}
