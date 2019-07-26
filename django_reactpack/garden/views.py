@@ -8,7 +8,8 @@ class GardensView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['gardens'] = self.get_gardens()
+        context['gardens'] = json.dumps(self.get_gardens())
+        return context
 
     def get_gardens(self):
         gardens = Garden.objects.prefetch_related().all()
@@ -18,10 +19,11 @@ class GardensView(TemplateView):
             garden_obj['id'] = garden.pk
             garden_obj['name'] = garden.name
             garden_obj['description'] = garden.description
-
-
-
-class GardensView(TemplateView):
-    template_name = '/'
-
-
+            beds = garden.bed_set.all().count()
+            plants = 0
+            for bed in beds:
+                plants += bed.plant_set.all().count()
+            garden_obj['beds_num'] = beds
+            garden_obj['plants'] = plants
+            garden_objs.append(garden_obj)
+        return garden_objs
