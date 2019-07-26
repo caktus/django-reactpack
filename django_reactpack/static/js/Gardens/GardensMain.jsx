@@ -9,24 +9,26 @@ const DUMMY_GARDENS = [
         id: 1,
         name: "My Vegetable Garden",
         description: "It's full of all my veg",
-        plots_num: 12,
+        beds_num: 12,
         plants_num: 74,
+        image: 'https://media.gettyimages.com/vectors/stylized-garden-vector-id165734990?s=2048x2048'
     },
     {
         id: 2,
         name: "Flowers!",
         description: "Such pretty flowers, you'll luv it",
-        plots_num: 3,
+        beds_num: 3,
         plants_num: 12,
+        image: 'https://media.gettyimages.com/vectors/stylized-garden-vector-id165734990?s=2048x2048'
     },
 ]
 
 const GardensMain = props => {
-    console.log("props.gardens: ", props.gardrens);
+    console.log("props.gardens: ", props.gardens);
     return (
         <div>
             <SectionHeader>My Gardens!</SectionHeader>
-            <CardGroup items={DUMMY_GARDENS} />
+            <CardGroup type="garden" items={DUMMY_GARDENS} />
         </div>
     );
 }

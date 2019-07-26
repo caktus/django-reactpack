@@ -1,13 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import BedMain from './BedMain';
 
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>;
-}
-
-const element = <Welcome name="this bed!" />;
 ReactDOM.render(
-    element,
+    <BedMain bed={window.bed} />,
     document.getElementById('bed__react')
 );

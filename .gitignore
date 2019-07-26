@@ -288,3 +288,5 @@ jgdc.yml
 
 .idea/
 .project
+
+django_reactpack/static/bundles/js/*

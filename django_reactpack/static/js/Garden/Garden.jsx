@@ -1,13 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import GardenMain from "./GardenMain";
 
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>;
-}
-
-const element = <Welcome name="this garden!" />;
 ReactDOM.render(
-    element,
+    <GardenMain garden={window.garden} />,
     document.getElementById('garden__react')
 );
+

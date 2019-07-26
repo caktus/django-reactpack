@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% comment %} Would be nice to abstract this bit in to another block {% endcomment%}
+    <script>
+        window.gardens = "{{ garden | safe }}";
+    </script>
+    {% load render_bundle from webpack_loader %}
+    <div id="garden__react"></div>
+    {% render_bundle 'garden' %}
+
+{% endblock content%}
