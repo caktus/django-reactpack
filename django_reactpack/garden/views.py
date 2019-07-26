@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, View
+from django.core.serializers.json import DjangoJSONEncoder
 from django.shortcuts import get_object_or_404, render
 from django_reactpack.garden.models import Garden
 import json
@@ -35,7 +36,7 @@ class GardenView(View):
 
     def get(self, request, *args, **kwargs):
         garden = get_object_or_404(Garden, pk=kwargs['id'])
-        return render(request, 'garden/garden.html', context={'garden': garden})
+        return render(request, 'garden/garden.html', context={'garden': json.dumps(garden, cls=DjangoJSONEncoder, ensure_ascii=False)})
 
 
 
