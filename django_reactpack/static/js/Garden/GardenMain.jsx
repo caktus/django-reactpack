@@ -21,6 +21,7 @@ const DUMMY_BEDS = [
 ]
 
 const GardenMain = props => {
+    console.log("props.garden: ", props.garden);
     return (
         <div>
             <SectionHeader>My Garden!</SectionHeader>

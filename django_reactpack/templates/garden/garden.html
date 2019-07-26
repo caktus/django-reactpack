@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>My Garden</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
+{% comment %} Would be nice to abstract this bit in to another block {% endcomment%}
 {{ garden }}
-</body>
-</html>
+<script>
+   window.gardens = "{{ garden | escapejs }}";
+</script>
+{% load render_bundle from webpack_loader %}
+<div id="garden__react"></div>
+{% render_bundle 'garden' %}
+
+{% endblock content%}

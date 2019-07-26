@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeader from '../Components/SectionHeader';
-import PlantList from '../Components/PlantList/PlantList.jsx';
+import PlantList from './PlantList/PlantList'
 
 
 const DUMMY_PLANTS = [
