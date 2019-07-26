@@ -1,5 +1,7 @@
 from django.db import models
-from django_reactpack.users.models import User
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class Garden(models.Model):
@@ -9,6 +11,7 @@ class Garden(models.Model):
         help_text="This garden's caretaker.",
         on_delete=models.CASCADE
     )
+    description = models.CharField(max_length=128, blank=True)
 
 
 class Bed(models.Model):

@@ -285,3 +285,8 @@ django_reactpack/media/
 
 ### Local hides
 jgdc.yml
+
+.idea/
+.project
+
+django_reactpack/static/bundles/js/*
