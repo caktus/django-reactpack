@@ -13,6 +13,9 @@ class Garden(models.Model):
     )
     description = models.CharField(max_length=128, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Bed(models.Model):
     FULL_SUN = 'FS'
