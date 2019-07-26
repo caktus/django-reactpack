@@ -19,11 +19,11 @@ class GardensView(TemplateView):
             garden_obj['id'] = garden.pk
             garden_obj['name'] = garden.name
             garden_obj['description'] = garden.description
-            beds = garden.bed_set.all().count()
+            beds = garden.bed_set.all()
             plants = 0
             for bed in beds:
                 plants += bed.plant_set.all().count()
-            garden_obj['beds_num'] = beds
+            garden_obj['beds_num'] = beds.count()
             garden_obj['plants'] = plants
             garden_objs.append(garden_obj)
         return garden_objs
