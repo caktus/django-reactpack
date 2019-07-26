@@ -3,9 +3,9 @@
 {% block content %}
 
 {% comment %} Would be nice to abstract this bit in to another block {% endcomment%}
-{{ garden }}
 <script>
-   window.gardens = "{{ garden | escapejs }}";
+   window.garden = "{{ garden | escapejs }}";
+   window.beds = "{{ beds | escapejs }}"
 </script>
 {% load render_bundle from webpack_loader %}
 <div id="garden__react"></div>

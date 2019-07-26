@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 const CardWrapperStyled = styled.div`
+    margin: 2rem 0;
     width: 40%;
     display: flex;
     justify-content: center;
