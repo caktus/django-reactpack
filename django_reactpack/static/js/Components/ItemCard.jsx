@@ -24,27 +24,33 @@ const CardButtonWrapper = styled.div`
 const Item = props => {
     const { item } = props;
 
-    const handleCardClick = () => {
-        console.log("clicked item: ", item.id)
+    const getItemUrl = () => {
+        const itemType = props.type;
+        const url = window.location.href.split('/')
+        url[url.length - 2] = `${itemType}/${item.id}`;
+        return url.join("/")
     }
 
     return (
         <CardWrapperStyled>
             <CardButtonWrapper>
-                <Card onClick={handleCardClick}>
+                <Card href={getItemUrl()}>
                     <Image src={item.image} wrapped ui={false} />
                     <Card.Content>
                         <Card.Header>{item.name}</Card.Header>
-                        <Card.Meta>
-                            <span className='date'>{item.plots_num} Beds</span>
-                        </Card.Meta>
+                        {item.beds_num 
+                            ? <Card.Meta>
+                                <span className='date'>{item.beds_num ? `${item.beds_num} Beds` : ""}</span>
+                              </Card.Meta>
+                            : null
+                        }
                         <Card.Description>
                             {item.description}
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
                             <Icon name='tree' />
-                            {item.plants_num} Plants
+                            {item.plants} Plants
                     </Card.Content>
                 </Card>
             </CardButtonWrapper>

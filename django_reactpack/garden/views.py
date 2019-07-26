@@ -8,7 +8,7 @@ class GardensView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['gardens'] = json.dumps(self.get_gardens())
+        context['gardens'] = json.dumps(self.get_gardens())  # self.get_gardens()
         return context
 
     def get_gardens(self):

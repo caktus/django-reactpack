@@ -4,7 +4,10 @@ import ReactDOM from 'react-dom'
 // Children
 import GardensMain from './GardensMain';
 
-ReactDOM.render(
-    <GardensMain gardens={window.gardens} />,
-    document.getElementById('gardens__react')
-);
+let pretendLoadTimeout = setTimeout(() => {
+    ReactDOM.render(
+        <GardensMain gardens={JSON.parse(window.gardens)} />,
+        document.getElementById('gardens__react')
+    );
+}, 800);
+

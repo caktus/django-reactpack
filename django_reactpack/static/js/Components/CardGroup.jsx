@@ -16,8 +16,8 @@ const GroupStyled = styled.div`
 const CardGroup = props => (
     <GroupStyled>
         {props.items.map(item => {
-            if (props.type == 'plant') return <PlantCard key={item.id} item={item} />
-            return <ItemCard key={item.id} item={item} />
+            if (props.type == 'plant') return <PlantCard key={item.id} type={props.type} item={item} />
+            return <ItemCard key={item.id} type={props.type} item={item} />
         })}
     </GroupStyled>
 )

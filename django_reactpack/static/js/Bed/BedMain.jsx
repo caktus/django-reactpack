@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionHeader from '../Components/SectionHeader';
-import CardGroup from '../Components/CardGroup';
+import PlantList from '../Components/PlantList/PlantList.jsx';
 
 
 const DUMMY_PLANTS = [
@@ -31,13 +31,13 @@ const DUMMY_PLANTS = [
     },
 ]
 
-const GardenMain = props => {
+const BedMain = props => {
     return (
         <div>
             <SectionHeader>My Bed!</SectionHeader>
-            <CardGroup type="plant" items={DUMMY_PLANTS} />
+            <PlantList plants={DUMMY_PLANTS} />
         </div>
     );
 }
 
-export default GardenMain
+export default BedMain

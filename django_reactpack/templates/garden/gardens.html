@@ -4,7 +4,7 @@
 
     {% comment %} Would be nice to abstract this bit in to another block {% endcomment%}
     <script>
-        window.gardens = "{{ gardens | safe }}";
+        window.gardens = "{{ gardens | escapejs }}"
     </script>
     {% load render_bundle from webpack_loader %}
     <div id="gardens__react"></div>
