@@ -1,10 +1,8 @@
 import React from 'react';
 
-// Deps
-import { Card } from 'semantic-ui-react';
-
 // Children
-import GardenCard from "../Components/GardenCard";
+import CardGroup from "../Components/CardGroup";
+import SectionHeader from '../Components/SectionHeader';
 
 const DUMMY_GARDENS = [
     {
@@ -24,11 +22,11 @@ const DUMMY_GARDENS = [
 ]
 
 const GardensMain = props => {
+    console.log("props.gardens: ", props.gardrens);
     return (
         <div>
-            <Card.Group>
-                {DUMMY_GARDENS.map(garden => <GardenCard key={garden.id} garden={garden} />)}
-            </Card.Group>
+            <SectionHeader>My Gardens!</SectionHeader>
+            <CardGroup items={DUMMY_GARDENS} />
         </div>
     );
 }

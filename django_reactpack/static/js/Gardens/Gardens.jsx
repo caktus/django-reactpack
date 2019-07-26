@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 // Children
 import GardensMain from './GardensMain';
 
-const Gardens = props => {
-    return <GardensMain {...props}/>
+const Gardens = () => {
+    return <GardensMain gardens={window.gardens}/>
 }
 
 
