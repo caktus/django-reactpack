@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
-from django_reactpack.garden.views import GardensView
+from django_reactpack.garden.views import GardensView, GardenView
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
@@ -19,6 +19,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
     path("gardens/", GardensView.as_view(template_name='garden/gardens.html'), name="gardens"),
+    path("gardens/<int:id>/", GardenView.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:

@@ -1,10 +1,12 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, View
+from django.shortcuts import get_object_or_404, render
 from django_reactpack.garden.models import Garden
 import json
 
 
 class GardensView(TemplateView):
     template_name = "gardens.html"
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,3 +29,13 @@ class GardensView(TemplateView):
             garden_obj['plants'] = plants
             garden_objs.append(garden_obj)
         return garden_objs
+
+
+class GardenView(View):
+
+    def get(self, request, *args, **kwargs):
+        garden = get_object_or_404(Garden, pk=kwargs['id'])
+        return render(request, 'garden/garden.html', context={'garden': garden})
+
+
+
