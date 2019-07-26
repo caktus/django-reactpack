@@ -1,0 +1,9 @@
+{% block content %}
+
+{{ name }}
+
+{% load render_bundle from webpack_loader %}
+
+<div id="{% name + __react %}"></div>
+{% render_bundle name %}
+{% endblock content%}

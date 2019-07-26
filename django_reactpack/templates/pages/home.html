@@ -1,1 +1,10 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+    {% comment %} Would be nice to abstract this bit in to another block {% endcomment%}
+    {% load render_bundle from webpack_loader %}
+    <div id="gardens__react"></div>
+    {% render_bundle 'gardens' %}
+
+{% endblock content%}
