@@ -1,4 +1,6 @@
+const webpack = require('webpack');
 const path = require('path');
+const BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
     context: __dirname,
@@ -7,11 +9,23 @@ module.exports = {
         my_garden: './django_reactpack/static/js/myGardens.js'
     },
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        filename: '[name]-[hash].bundle.js',
+        path: path.resolve(__dirname, 'static/js')
     },
 
     plugins: [
-        new BundleTracker({ filename: './webpack-stats.json' })
-    ]
+        new BundleTracker({ filename: './static/js/webpack-stats.json' })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            }
+        ]
+    },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    }
 };
